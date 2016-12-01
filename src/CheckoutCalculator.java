@@ -1,13 +1,20 @@
+import java.util.HashMap;
 
 public class CheckoutCalculator {
 
 	public int calculateTotalAmountAtCheckout(String itemCode) {
-		if (itemCode.equals("A")) {
-			return 100;
-		} else if (itemCode.equals("B")) {
-			return 200;
-		}
-		return 0;
+		
+		return getPriceOfItem(itemCode);
+	}
+
+	private int getPriceOfItem(String itemCode) {
+		
+		HashMap<String, Integer> itemPriceMapper = new HashMap<String, Integer>();
+		
+		itemPriceMapper.put("A", 100);
+		itemPriceMapper.put("B", 200);
+		
+		return itemPriceMapper.getOrDefault(itemCode, 0);
 	}
 
 }
