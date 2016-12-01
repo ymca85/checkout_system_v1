@@ -1,5 +1,8 @@
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
 public class CheckoutCalculatorShould {
@@ -8,7 +11,8 @@ public class CheckoutCalculatorShould {
 	public void return_amount_100_for_item_A() {
 
 		CheckoutCalculator checkoutCalculator = new CheckoutCalculator();
-		assertEquals(100, checkoutCalculator.calculateTotalAmountAtCheckout("A"));
+		List<String> listOfItemCode = Arrays.asList("A");
+		assertEquals(100, checkoutCalculator.calculateTotalAmountAtCheckout(listOfItemCode));
 
 	}
 	
@@ -16,7 +20,8 @@ public class CheckoutCalculatorShould {
 	public void return_amount_200_for_item_B() {
 
 		CheckoutCalculator checkoutCalculator = new CheckoutCalculator();
-		assertEquals(200, checkoutCalculator.calculateTotalAmountAtCheckout("B"));
+		List<String> listOfItemCode = Arrays.asList("B");
+		assertEquals(200, checkoutCalculator.calculateTotalAmountAtCheckout(listOfItemCode));
 
 	}
 	
@@ -24,7 +29,8 @@ public class CheckoutCalculatorShould {
 	public void return_amount_300_for_item_C() {
 
 		CheckoutCalculator checkoutCalculator = new CheckoutCalculator();
-		assertEquals(300, checkoutCalculator.calculateTotalAmountAtCheckout("C"));
+		List<String> listOfItemCode = Arrays.asList("C");
+		assertEquals(300, checkoutCalculator.calculateTotalAmountAtCheckout(listOfItemCode));
 
 	}
 

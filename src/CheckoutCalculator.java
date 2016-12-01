@@ -1,10 +1,11 @@
 import java.util.HashMap;
+import java.util.List;
 
 public class CheckoutCalculator {
 
-	public int calculateTotalAmountAtCheckout(String itemCode) {
+	public int calculateTotalAmountAtCheckout(List<String> listOfitemCode) {
 		
-		return getPriceOfItem(itemCode);
+		return getPriceOfItem(listOfitemCode.get(0));
 	}
 
 	private int getPriceOfItem(String itemCode) {
