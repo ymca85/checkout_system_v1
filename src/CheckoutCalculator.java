@@ -13,6 +13,7 @@ public class CheckoutCalculator {
 		
 		itemPriceMapper.put("A", 100);
 		itemPriceMapper.put("B", 200);
+		itemPriceMapper.put("C", 300);
 		
 		return itemPriceMapper.getOrDefault(itemCode, 0);
 	}
