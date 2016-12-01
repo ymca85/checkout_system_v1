@@ -42,5 +42,14 @@ public class CheckoutCalculatorShould {
 		assertEquals(300, checkoutCalculator.calculateTotalAmountAtCheckout(listOfItemCode));
 
 	}
+	
+	@Test
+	public void return_amount_180_for_item_A_A_with_discounted_price_90() {
+
+		CheckoutCalculator checkoutCalculator = new CheckoutCalculator();
+		List<String> listOfItemCode = Arrays.asList("A", "A");
+		assertEquals(180, checkoutCalculator.calculateTotalAmountAtCheckout(listOfItemCode));
+
+	}
 
 }
