@@ -19,5 +19,13 @@ public class CheckoutCalculatorShould {
 		assertEquals(200, checkoutCalculator.calculateTotalAmountAtCheckout("B"));
 
 	}
+	
+	@Test
+	public void return_amount_300_for_item_C() {
+
+		CheckoutCalculator checkoutCalculator = new CheckoutCalculator();
+		assertEquals(300, checkoutCalculator.calculateTotalAmountAtCheckout("C"));
+
+	}
 
 }
