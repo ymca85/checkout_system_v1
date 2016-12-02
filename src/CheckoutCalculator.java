@@ -23,8 +23,23 @@ public class CheckoutCalculator {
 		if (countOfItemA >= 2) {
 			totalPriceOfAllItems = updateTootalPriceAtCheckout(totalPriceOfAllItems, countOfItemA);
 		}
-
+		
+		int countOfItemB = getCountOfItemB(listOfitemCode);
+		if(countOfItemB >=2) {
+			totalPriceOfAllItems = totalPriceOfAllItems + (180 * countOfItemB) - (getPriceOfItem("B") * countOfItemB);
+		}
+		
 		return totalPriceOfAllItems;
+	}
+
+	private int getCountOfItemB(List<String> listOfitemCode) {
+		int countOfItemB = 0;
+		for (String itemCode : listOfitemCode) {
+			if (itemCode.equals("B")) {
+				countOfItemB++;
+			}
+		}
+		return countOfItemB;
 	}
 
 	private int updateTootalPriceAtCheckout(int totalPriceOfAllItems, int countOfItemA) {
