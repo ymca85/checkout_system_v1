@@ -19,18 +19,27 @@ public class CheckoutCalculator {
 
 		}
 
+		int countOfItemA = getCountOfItemA(listOfitemCode);
+		if (countOfItemA >= 2) {
+			totalPriceOfAllItems = updateTootalPriceAtCheckout(totalPriceOfAllItems, countOfItemA);
+		}
+
+		return totalPriceOfAllItems;
+	}
+
+	private int updateTootalPriceAtCheckout(int totalPriceOfAllItems, int countOfItemA) {
+		totalPriceOfAllItems = totalPriceOfAllItems + (90 * countOfItemA) - (getPriceOfItem("A") * countOfItemA);
+		return totalPriceOfAllItems;
+	}
+
+	private int getCountOfItemA(List<String> listOfitemCode) {
 		int countOfItemA = 0;
 		for (String itemCode : listOfitemCode) {
 			if (itemCode.equals("A")) {
 				countOfItemA++;
 			}
 		}
-		if (countOfItemA >= 2) {
-			totalPriceOfAllItems = totalPriceOfAllItems + (90 * countOfItemA)
-					- (getPriceOfItem("A") * countOfItemA);
-		}
-
-		return totalPriceOfAllItems;
+		return countOfItemA;
 	}
 
 	private int getPriceOfItem(String itemCode) {
